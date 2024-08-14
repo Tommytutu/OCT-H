@@ -4,7 +4,7 @@ Code for the paper *"Inherently Interpretable Machine Learning for Credit Scorin
 
 The code will run in python3 and require [Gurobi11.0](https://www.gurobi.com/products/gurobi-optimizer/) solver.
 
-## Parameters for OCT
+## Parameters for OCT-H
 
 - **`max_depth`**: This parameter sets the maximum depth of the tree. A deeper tree can capture more complex patterns but may also lead to overfitting and more computation time. The default value is 2.
 
@@ -20,19 +20,23 @@ The code will run in python3 and require [Gurobi11.0](https://www.gurobi.com/pro
   - `objective = cost-sensitive`: This is for the cost-sensitive OCT-H (CSOCT-H).
   
   For the credit scoring problem, the default value is `objective = F1-score`.
+  
 
 - **`CFN`**: This parameter only functions when `objective = cost-sensitive` and is used to overcome class imbalance. The default value is the ratio of goods to bads.
 
 - **`number_important_features`**: This parameter indicates the number of features selected by the Random Forest (RF) at each branch node. The default value is 15.
 
+## Parameters for OCT-H
+
 ## How to Run the Code
 
 After you install the required packages, you can call the main function within a python file as follows (This is what we do in run_exp.py):
 
-```python
+python
 import LBC
 import OCTH_warm_start
 model = OCTH_warm_start.OCTH_warm_start(max_depth=2, alpha=0.01, N=5, objective='F1-score', warmstart=True, output=True)
 model.fit(x_train1, y_train)
+
 
 
