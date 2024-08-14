@@ -57,9 +57,27 @@ The following Python packages are required to run the code:
 - `scikit-learn`
 - `matplotlib`
 
-You can install these packages using pip:
-
-```bash
-pip install numpy pandas scikit-learn matplotlib
 
 
+## Logistic Regression Model Parameters
+
+The Logistic Regression model in this project is implemented using the `LogisticRegression` class from the scikit-learn library. Below is a detailed explanation of the parameters used:
+
+- **`C`**: 
+  - **Description**: Inverse of regularization strength; must be a positive float. Regularization is a technique used to prevent overfitting by adding a penalty to the loss function.
+  - **Effect**: Smaller values of `C` imply stronger regularization. A larger `C` value means less regularization.
+  - **Values Used**: `[0.1, 1, 10]` in grid search.
+
+- **`penalty`**: 
+  - **Description**: Specifies the norm used in the penalization.
+  - **Options**: 
+    - `'l1'`: L1 regularization, which can lead to sparse solutions (some coefficients are exactly zero), useful for feature selection.
+    - `'l2'`: L2 regularization, which tends to distribute error across all terms.
+  - **Usage**: Both `'l1'` and `'l2'` are explored in grid search.
+
+- **`class_weight`**: 
+  - **Description**: Weights associated with classes to handle class imbalance.
+  - **Options**: 
+    - `None`: All classes are supposed to have weight one.
+    - `'balanced'`: Adjusts weights inversely proportional to class frequencies in the input data.
+  - **Usage**: Both `None` and `'balanced'` are considered
