@@ -33,14 +33,12 @@ The code will run in python3 and require [Gurobi11.0](https://www.gurobi.com/pro
 After you install the required packages, you can call the main function within a python file as follows (This is what we do in `run_exp.py`):
 
 
-```import LBC
-
-`import OCTH_warm_start`
-
+```
+import LBC
+import OCTH_warm_start
 model = OCTH_warm_start.OCTH_warm_start(max_depth=2, alpha=0.01, N=5, objective='F1-score', warmstart=True, output=True)
-
 model.fit(x_train1, y_train)
-
+```
 
 
 
