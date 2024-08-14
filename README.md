@@ -81,3 +81,39 @@ The Logistic Regression model in this project is implemented using the `Logistic
     - `None`: All classes are supposed to have weight one.
     - `'balanced'`: Adjusts weights inversely proportional to class frequencies in the input data.
   - **Usage**: Both `None` and `'balanced'` are considered
+ 
+
+  # Decision Tree Model Parameters
+
+The Decision Tree model in this project is implemented using the `DecisionTreeClassifier` class from the scikit-learn library. Below is a detailed explanation of the parameters used:
+
+- **`criterion`**: 
+  - **Description**: The function to measure the quality of a split.
+  - **Options**: 
+    - `'gini'`: Measures the Gini impurity.
+    - `'entropy'`: Measures the information gain.
+  - **Usage**: Both `'gini'` and `'entropy'` are explored in grid search.
+
+- **`max_depth`**: 
+  - **Description**: The maximum depth of the tree.
+  - **Effect**: Controls the maximum number of levels in the tree to prevent overfitting.
+  - **Values Used**: `[1, 2, 3, 4, 5, 10]` in grid search.
+
+- **`min_samples_split`**: 
+  - **Description**: The minimum number of samples required to split an internal node.
+  - **Effect**: Higher values prevent the model from learning overly specific patterns.
+  - **Values Used**: `[1, 2, 5, 10, 15, 100]` in grid search.
+
+- **`min_samples_leaf`**: 
+  - **Description**: The minimum number of samples required to be at a leaf node.
+  - **Effect**: Controls the size of the tree; larger values simplify the model.
+  - **Values Used**: `[10, 20, 50, 100]` in grid search.
+
+- **`class_weight`**: 
+  - **Description**: Weights associated with classes to handle class imbalance.
+  - **Options**: 
+    - `None`: All classes have weight one.
+    - `'balanced'`: Adjusts weights inversely proportional to class frequencies.
+  - **Usage**: Both `None` and `'balanced'` are considered.
+
+The model is optimized using grid search with cross-validation to find the best combination of these parameters based on the ROC AUC score.
