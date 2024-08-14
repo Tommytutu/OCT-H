@@ -4,6 +4,8 @@ Code for the paper *"Inherently Interpretable Machine Learning for Credit Scorin
 
 The code will run in python3 and require [Gurobi11.0](https://www.gurobi.com/products/gurobi-optimizer/) solver.
 
+run_example.py is the 
+
 ## Parameters 
 
 - **`max_depth`**: This parameter sets the maximum depth of the tree. A deeper tree can capture more complex patterns but may also lead to overfitting and more computation time. The default value is 2.
