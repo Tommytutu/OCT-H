@@ -39,18 +39,22 @@ model = OCTH_warm_start.OCTH_warm_start(max_depth=2, alpha=0.01, N=5, objective=
 model.fit(x_train1, y_train)
 
 
-# Logistic Regression Model Parameters
-
-This section provides an overview of the parameters used in the Logistic Regression model for credit scoring.
-
-- **`C`**: Inverse of regularization strength; must be a positive float. Smaller values specify stronger regularization. The default values used in the grid search are `[0.1, 1, 10]`.
-
-- **`penalty`**: Specifies the norm used in the penalization. The options are `'l1'` and `'l2'`. `'l1'` can lead to sparse solutions, where some coefficients are exactly zero, which can be useful for feature selection.
-
-- **`class_weight`**: Weights associated with classes. If not given, all classes are supposed to have weight one. The `'balanced'` mode uses the values of `y` to automatically adjust weights inversely proportional to class frequencies in the input data.
-
-- **`solver`**: Algorithm to use in the optimization problem. In this code, `'saga'` is used, which supports both `l1` and `l2` penalties and is suitable for large datasets.
 
 
+# Logistic Regression for Credit Scoring
 
+This project implements a Logistic Regression model using the scikit-learn library to evaluate credit scoring. The model is optimized using grid search for hyperparameter tuning.
 
+## Prerequisites
+
+The following Python packages are required to run the code:
+
+- `numpy`
+- `pandas`
+- `scikit-learn`
+- `matplotlib`
+
+You can install these packages using pip:
+
+```bash
+pip install numpy pandas scikit-learn matplotlib
