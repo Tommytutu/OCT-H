@@ -30,7 +30,7 @@ The code will run in python3 and require [Gurobi11.0](https://www.gurobi.com/pro
 
 ## How to Run the Code
 
-After you install the required packages, you can call the main function within a python file as follows (This is what we do in `run_exp.py'):
+After you install the required packages, you can call the main function within a python file as follows (This is what we do in `run_exp.py`):
 
 
 import LBC
