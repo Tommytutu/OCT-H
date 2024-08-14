@@ -117,3 +117,52 @@ The Decision Tree model in this project is implemented using the `DecisionTreeCl
   - **Usage**: Both `None` and `'balanced'` are considered.
 
 The model is optimized using grid search with cross-validation to find the best combination of these parameters based on the ROC AUC score.
+
+
+# Random Forest Model Parameters
+
+The Random Forest model in this project is implemented using the `RandomForestClassifier` class from the scikit-learn library. Below is a detailed explanation of the parameters used:
+
+- **`n_estimators`**: 
+  - **Description**: The number of trees in the forest.
+  - **Effect**: More trees can improve the model's performance but also increase computation time.
+  - **Values Used**: `[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]` in grid search.
+
+- **`max_depth`**: 
+  - **Description**: The maximum depth of the tree.
+  - **Effect**: Limits the number of levels in each decision tree to prevent overfitting.
+  - **Values Used**: `[None, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]` in grid search.
+
+- **`min_samples_split`**: 
+  - **Description**: The minimum number of samples required to split an internal node.
+  - **Effect**: Higher values prevent the model from learning overly specific patterns.
+  - **Values Used**: `[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]` in grid search.
+
+- **`min_samples_leaf`**: 
+  - **Description**: The minimum number of samples required to be at a leaf node.
+  - **Effect**: Controls the size of the tree; larger values simplify the model.
+  - **Values Used**: `[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]` in grid search.
+
+- **`max_features`**: 
+  - **Description**: The number of features to consider when looking for the best split.
+  - **Options**: 
+    - `'log2'`: Use log2 of the number of features.
+    - `'sqrt'`: Use the square root of the number of features.
+    - `None`: Use all features.
+  - **Usage**: All options are explored in grid search.
+
+- **`bootstrap`**: 
+  - **Description**: Whether bootstrap samples are used when building trees.
+  - **Options**: 
+    - `True`: Use bootstrap samples.
+    - `False`: Use the entire dataset.
+  - **Usage**: Both `True` and `False` are considered.
+
+- **`class_weight`**: 
+  - **Description**: Weights associated with classes to handle class imbalance.
+  - **Options**: 
+    - `None`: All classes have weight one.
+    - `'balanced'`: Adjusts weights inversely proportional to class frequencies.
+  - **Usage**: Both `None` and `'balanced'` are considered.
+
+The model is optimized using grid search with cross-validation to find the best combination of these parameters based on the F1 score.
