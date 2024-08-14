@@ -34,7 +34,8 @@ After you install the required packages, you can call the main function within a
 
   ```python
   import LBC
-
   import OCTH_warm_start
+  model = OCTH_warm_start.OCTH_warm_start(max_depth=2, alpha=0.01, N=5, objective='F1-score', warmstart=True, output=True)
+  model.fit(x_train1, y_train)
 
 
