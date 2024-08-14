@@ -1,9 +1,8 @@
 # OCT-H 
 
-Code for the paper ''Inherently Interpretable Machine Learning for Credit Scoring: Optimal
-Classification Tree with Hyperplane Splits''.
+Code for the paper *"Inherently Interpretable Machine Learning for Credit Scoring: Optimal Classification Tree with Hyperplane Splits"*.
 
-The code will run in python3 and require Gurobi11.0 solver. The required packages are listed in 
+The code will run in python3 and require [Gurobi11.0](https://www.gurobi.com/products/gurobi-optimizer/) solver.
 
 ## Parameters 
 
