@@ -30,25 +30,11 @@ run_example.py is the
 
 ## How to run the code
 
-* **Step 1**: Detect the violations of index-exchangeability condition
+After you install the required packages, you can call the main function within a python file as follows (This is what we do in run_exp.py)
 
-  Apply the function **[NV,violation_index_equal, violation_index_inequal]=NV_index_exchangeability(A)**, we get $NV=54$. Thus, $\mathbf{A}$ violates the index-exchangeability condition.
-  In such cases, we have two options: directly derive the priority vector by the function **MNVLLSM**, goes to Step 2; communicate with the DM and use function **NPRAOC** to provide some
-  modification suggestions and get more coherent preferences, goes to Step 3.
+  ```python
+  import LBC
 
-  ```matlab
-  clear;
-  clc;
-  A=[1    	5    	3    	7    	6    	6    	 1/3	 1/4
-   1/5	1    	 1/3	5    	3    	3    	 1/5	 1/7
-   1/3	3    	1    	6    	3    	4    	6    	 1/5
-   1/7	 1/5	 1/6	1    	 1/3	 1/4	 1/7	 1/8
-   1/6	 1/3	 1/3	3    	1    	 1/2	 1/5	 1/6
-   1/6	 1/3	 1/4	4    	2    	1    	 1/5	 1/6
-   3    	5    	 1/6	7    	5    	5    	1    	 1/2
-   4    	7    	5    	8    	6    	6    	2    	1    ];
-
-
-  [NV,violation_index_equal, violation_index_inequal]=NV_index_exchangeability(A);
+  import OCTH_warm_start
 
 
