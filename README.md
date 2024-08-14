@@ -1,10 +1,10 @@
-# OCT-H
+# Inherently Interpretable Machine Learning for Credit Scoring: Optimal Classification Tree with Hyperplane Splits
 
 Code for the paper *"Inherently Interpretable Machine Learning for Credit Scoring: Optimal Classification Tree with Hyperplane Splits"*.
 
 The code will run in python3 and require [Gurobi11.0](https://www.gurobi.com/products/gurobi-optimizer/) solver.
 
-## Parameters
+## Parameters for OCT
 
 - **`max_depth`**: This parameter sets the maximum depth of the tree. A deeper tree can capture more complex patterns but may also lead to overfitting and more computation time. The default value is 2.
 
