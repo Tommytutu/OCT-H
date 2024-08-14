@@ -166,3 +166,64 @@ The Random Forest model in this project is implemented using the `RandomForestCl
   - **Usage**: Both `None` and `'balanced'` are considered.
 
 The model is optimized using grid search with cross-validation to find the best combination of these parameters based on the F1 score.
+
+# LightGBM Model Parameters
+
+The LightGBM model in this project is implemented using the `LGBMClassifier` class from the LightGBM library. Below is a detailed explanation of the parameters used:
+
+- **`objective`**: 
+  - **Description**: Specifies the learning task and the corresponding objective function.
+  - **Value Used**: `'binary'` for binary classification tasks.
+
+- **`metric`**: 
+  - **Description**: The metric used for evaluation.
+  - **Value Used**: `'auc'` to evaluate the model using the Area Under the ROC Curve.
+
+- **`boosting_type`**: 
+  - **Description**: The type of boosting to use.
+  - **Value Used**: `'gbdt'` which stands for Gradient Boosting Decision Tree.
+
+- **`verbosity`**: 
+  - **Description**: Controls the amount of information LightGBM outputs.
+  - **Value Used**: `-1` to suppress all messages except for errors.
+
+- **`seed`**: 
+  - **Description**: The random seed for reproducibility.
+  - **Value Used**: `42`.
+
+### Hyperparameters Tuned via Grid Search
+
+- **`n_estimators`**: 
+  - **Description**: The number of boosting rounds.
+  - **Values Used**: `[100, 200, 300, 400, 500, 600, 700, 800, 900, 1000]`.
+
+- **`max_depth`**: 
+  - **Description**: The maximum depth of a tree.
+  - **Values Used**: `[None, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]`.
+
+- **`min_samples_split`**: 
+  - **Description**: The minimum number of samples required to split an internal node.
+  - **Values Used**: `[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]`.
+
+- **`min_samples_leaf`**: 
+  - **Description**: The minimum number of samples required to be at a leaf node.
+  - **Values Used**: `[10, 20, 30, 40, 50, 60, 70, 80, 90, 100]`.
+
+- **`learning_rate`**: 
+  - **Description**: The learning rate shrinks the contribution of each tree.
+  - **Values Used**: `[0.01, 0.1, 0.2]`.
+
+- **`lambda_l1`**: 
+  - **Description**: L1 regularization term on weights.
+  - **Values Used**: `[0, 0.1, 1]`.
+
+- **`lambda_l2`**: 
+  - **Description**: L2 regularization term on weights.
+  - **Values Used**: `[0, 0.1, 1]`.
+
+- **`scale_pos_weight`**: 
+  - **Description**: Controls the balance of positive and negative weights.
+  - **Values Used**: `[1, len(y)/sum(y)]`.
+
+The model is optimized using grid search with cross-validation to find the best combination of these parameters based on the ROC AUC score.
+
