@@ -1,6 +1,9 @@
-# OCT-H Models Overview
+# OCT-H 
 
-This paper divides OCT-H models into two main models based on solving methods: the heuristic method (refer to Section [Heuristic](#heuristic)) and global optimization based on warm start (refer to Section [Warm Start](#warm-start)).
+Code for the paper ''Inherently Interpretable Machine Learning for Credit Scoring: Optimal
+Classification Tree with Hyperplane Splits''.
+
+The code will run in python3 and require Gurobi11.0 solver. The required packages are listed in 
 
 ## Parameters 
 
